@@ -3,6 +3,10 @@ Feature: sample karate test script
 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
+    * def fakerObj =  new faker()
+    * def fName = fakerObj.name().firstName()
+    * def lName = fakerObj.name().lastName()
+    * def mailId = fName+'.'+lName+'@test.com'
 
   Scenario: get all users and then get the first user by id
     Given path 'users'
@@ -19,11 +23,11 @@ Feature: sample karate test script
     * def user =
       """
       {
-        "name": "Test User",
+        "name": "#(fName)",
         "username": "testuser",
-        "email": "test@user.com",
+        "email": '#(mailId)',
         "address": {
-          "street": "Has No Name",
+          "street": "#(fakerObj.address().streetAddress())",
           "suite": "Apt. 123",
           "city": "Electri",
           "zipcode": "54321-6789"
