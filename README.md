@@ -8,6 +8,16 @@ As seguintes ferramentas foram usadas na construção do projeto:
 * [Faker](https://github.com/postmanlabs/newman)      
 
 ### 🚀 Como adicionar a biblioteca Faker em um projeto Karate
+0) Criar um projeto karate utilizando o maven pela linha de comando (Mudar os valores de com.mycompany e myproject conforme o seu projeto)
+
+```bash
+mvn archetype:generate \
+-DarchetypeGroupId=com.intuit.karate \
+-DarchetypeArtifactId=karate-archetype \
+-DarchetypeVersion=1.2.0 \
+-DgroupId=com.mycompany \
+-DartifactId=myproject
+```
 
 1) Adicionar o código abaixo no arquivo pom.xml dentro da tag dependencies em seguida salvar a modificação e aceitar a instalação da dependência
 
@@ -38,7 +48,7 @@ https://github.com/fabioivi/qa-karate-faker/blob/main/src/test/java/karate-confi
 https://github.com/fabioivi/qa-karate-faker/blob/main/src/test/java/examples/users/users.feature
 
 4) Utilizar o obj faker criado conforme o modelo -> "#(fakerObj.funçãoDoFake()). 
-exemplo: "#(fakerObj.address().streetAddress())"
+exemplo: "#(fakerObj.address().streetAddress())" 
 
  ```
    Scenario: create a user and then get it by id
@@ -68,16 +78,16 @@ exemplo: "#(fakerObj.address().streetAddress())"
  ```
  https://github.com/fabioivi/qa-karate-faker/blob/main/src/test/java/examples/users/users.feature
  
-💡 Não esqueça de verificar se a dependência foi a adicionada no pom.xml e instalada no projeto, e não esqueça de configurar o karate-config.js, senão a bilioteca faker não vai funcionar.
+💡 Não esqueça de verificar se a dependência foi a adicionada no pom.xml e instalada no projeto, e não esqueça de configurar o karate-config.js, senão a biblioteca faker não vai funcionar corretamente.
 
 ### 🎲 Como utilizar este projeto
 
-#### O projeto já esta configurado para o uso do Karate com a biblioteca Faker, só precisa baixar e executar =)
+#### O projeto já esta configurado para o uso do Karate com a biblioteca Faker, só precisa baixar e executar ✔️
 
 ```bash
 # Clone este repositório para a sua máquina
 $ git clone git@github.com:fabioivi/qa-karate-faker.git
 
 # Execute o comando para rodar os testes do Karate 
-$ 
+$ mvn test
 ```
